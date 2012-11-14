@@ -1,0 +1,10 @@
+<h1>Here are all of your posts</h1>
+
+Posts
+<% @posts.each do |post| %>
+  <ul>
+    <li><%= link_to post.title, post.url %></li>
+    <li><%= link_to 'Edit', edit_post_path(:id => post.id) %></li>
+    <li><%= link_to 'Delete', post_path(:id => post.id), :method => :delete %></li>
+  </ul>
+<% end %>
